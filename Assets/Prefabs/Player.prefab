@@ -330,8 +330,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a951ddc950635e4c987cbaab8e79566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 0}
-  target: {fileID: 0}
+  Projectile: {fileID: 0}
+  fieldManager: {fileID: 11400000, guid: 68d0efc85c47a4c4993926131ad23175, type: 2}
   staringPoint: {fileID: 3112488684344172418}
   startSpeed: 8
   speedIncrement: 1
@@ -380,5 +380,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14bf29e9229e40428de6fcfbffa0334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  placementArea: {fileID: 0}
-  target: {fileID: 0}
+  fieldManager: {fileID: 11400000, guid: 68d0efc85c47a4c4993926131ad23175, type: 2}
