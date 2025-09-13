@@ -1,12 +1,15 @@
 using Sirenix.OdinInspector;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using static BallisticCalculatorUtility;
 
 public class Shooter : MonoBehaviour
 {
+    [Header("Set Runtime")]
     [SerializeField] private Rigidbody projectile;
     [SerializeField] private Transform target;
+
+    [Header("Manually set")]
+    [SerializeField] private Transform staringPoint;
     [SerializeField] private float startSpeed = 10f;
     [SerializeField] private float speedIncrement = 0.5f;
 
@@ -22,8 +25,8 @@ public class Shooter : MonoBehaviour
     public void LockProjectile()
     {
         projectile.isKinematic = true;
-        projectile.transform.position = transform.position;
-        projectile.transform.parent = transform;
+        projectile.transform.position = staringPoint.position;
+        projectile.transform.parent = staringPoint;
 
     }
 
@@ -44,11 +47,12 @@ public class Shooter : MonoBehaviour
     /// <param name="error">The amount of undershoot or overshoot. The error value should go from -1 to 1 for better results. 0 error means a perfect shot.</param>
     public void Shoot(float error = 0)
     {
-        if (target == null) throw new MissingReferenceException($"The target for the shooter {name} is missing.");
+        if (target == null) throw new MissingReferenceException($"The target for the {nameof(Shooter)} {name} is missing.");
+        if (staringPoint == null) throw new MissingReferenceException($"The staring point for the {nameof(Shooter)} {name} is missing.");
 
         var data = new BallisticCalculationData()
         {
-            Start = transform.position,
+            Start = staringPoint.position,
             Target = target.position,
             Speed = startSpeed
         };
@@ -62,6 +66,7 @@ public class Shooter : MonoBehaviour
                 projectile.velocity = perfectVelocity * errorCurve.Evaluate(error);
                 return;
             }
+            print("iterating");
             data.Speed += speedIncrement;
         }
         while (!isBallisticallyPossible);              
