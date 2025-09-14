@@ -3,8 +3,15 @@ using UnityEngine;
 
 public class PlayerMover : MonoBehaviour
 {
-    [SerializeField] private Collider placementArea;
-    [SerializeField] private Transform target;
+    [SerializeField] private FieldManager fieldManager;
+    private Collider placementArea;
+    private Transform target;
+
+    private void Awake()
+    {
+        placementArea = fieldManager.FieldInfo.PlacementArea;
+        target = fieldManager.FieldInfo.Target;
+    }
 
     [Button]
     public void PlacePlayerRandomly()

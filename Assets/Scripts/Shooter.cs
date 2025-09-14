@@ -4,36 +4,36 @@ using static BallisticCalculatorUtility;
 
 public class Shooter : MonoBehaviour
 {
-    [Header("Set Runtime")]
-    [SerializeField] private Rigidbody projectile;
-    [SerializeField] private Transform target;
+    [Header("Set on runtime")]   
+    public Rigidbody Projectile;
 
-    [Header("Manually set")]
+    [Header("Set by hand")]
+    [SerializeField] private FieldManager fieldManager;
     [SerializeField] private Transform staringPoint;
     [SerializeField] private float startSpeed = 10f;
     [SerializeField] private float speedIncrement = 0.5f;
-
     [Tooltip("This curve determine how a different error affect the ballistically perfect shot.")]
     [SerializeField] private AnimationCurve errorCurve;
 
+    private Transform target;
+
     private void Awake()
     {
-        LockProjectile();
+        target = fieldManager.FieldInfo.Target;
     }
 
     [Button]
     public void LockProjectile()
     {
-        projectile.isKinematic = true;
-        projectile.transform.position = staringPoint.position;
-        projectile.transform.parent = staringPoint;
-
+        Projectile.isKinematic = true;
+        Projectile.transform.position = staringPoint.position;
+        Projectile.transform.parent = staringPoint;
     }
 
     public void UnlockProjectile()
     {
-        projectile.isKinematic = false;
-        projectile.transform.parent = null;
+        Projectile.isKinematic = false;
+        Projectile.transform.parent = null;
     }
 
     [Button]
@@ -63,10 +63,9 @@ public class Shooter : MonoBehaviour
             isBallisticallyPossible = SolveBallisticVelocity(data, out var perfectVelocity);
             if (isBallisticallyPossible)
             {
-                projectile.velocity = perfectVelocity * errorCurve.Evaluate(error);
+                Projectile.velocity = perfectVelocity * errorCurve.Evaluate(error);
                 return;
             }
-            print("iterating");
             data.Speed += speedIncrement;
         }
         while (!isBallisticallyPossible);              
