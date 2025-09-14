@@ -45,8 +45,3 @@ public class MatchManager : ScriptableObject
 
     public void ResetPlayerScore(Player player) => SetScore(player, 0);
 }
-
-public class Player : MonoBehaviour
-{
-    [SerializeField] private MatchManager matchManager;
-}

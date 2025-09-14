@@ -19,7 +19,6 @@ public class Shooter : MonoBehaviour
 
     private void Awake()
     {
-        LockProjectile();
         target = fieldManager.FieldInfo.Target;
     }
 

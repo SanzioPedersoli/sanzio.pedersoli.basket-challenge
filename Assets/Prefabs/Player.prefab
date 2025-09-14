@@ -291,6 +291,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3112488685380735148}
+  - component: {fileID: 3112488685142674787}
+  - component: {fileID: 3112488685142674786}
   - component: {fileID: 7210613370953603072}
   - component: {fileID: 6894157488392546951}
   m_Layer: 0
@@ -318,6 +320,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -83.933, z: 0}
+--- !u!114 &3112488685142674787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3112488685380735151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe31057a8fe654943b5da231e42b6072, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shooter: {fileID: 7210613370953603072}
+  ballManager: {fileID: 3112488685142674786}
+  mover: {fileID: 6894157488392546951}
+--- !u!114 &3112488685142674786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3112488685380735151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a22e142f7b3a69d44b823d7e1a0ef999, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NewBallReady:
+    m_PersistentCalls:
+      m_Calls: []
+  BallPrefab: {fileID: 3604349623356119318, guid: e504a424b5c77b14f9c05c532d14ed1d, type: 3}
 --- !u!114 &7210613370953603072
 MonoBehaviour:
   m_ObjectHideFlags: 0
