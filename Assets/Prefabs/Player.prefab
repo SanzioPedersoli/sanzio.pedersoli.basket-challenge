@@ -332,6 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe31057a8fe654943b5da231e42b6072, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  matchManager: {fileID: 11400000, guid: d356c3884908d7e499aa6725f9c19673, type: 2}
   shooter: {fileID: 7210613370953603072}
   ballManager: {fileID: 3112488685142674786}
   mover: {fileID: 6894157488392546951}

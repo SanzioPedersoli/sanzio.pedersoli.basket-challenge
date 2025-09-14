@@ -37,7 +37,6 @@ public class TimeGameMode : GameMode
             await UniTask.WaitForSeconds(UpdateInterval).AttachExternalCancellation(cancellationTokenSource.Token);
             currentTime -= UpdateInterval;
             TimeChanged?.Invoke(currentTime);
-            print(currentTime);
         }
         GameIsOver?.Invoke();
         print("GameOver");

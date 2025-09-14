@@ -1,10 +1,10 @@
 ﻿using Cysharp.Threading.Tasks;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Ball : MonoBehaviour
 {
-    private const string KillZone = "KillZone";
     private const float DestructionDelay = 2f;
     private const float DestructionFloorLevel = -1f;
 
@@ -17,12 +17,15 @@ public class Ball : MonoBehaviour
 
     public Rigidbody Rigidbody => rb;
 
-    private bool isInGame = true;
+
+    public bool isInGame = false;
+    private bool isDisposing = false;
 
     private void Update()
     {
-        if (isInGame && transform.position.y <= DestructionFloorLevel)
+        if (!isDisposing && transform.position.y <= DestructionFloorLevel)
         {
+            isDisposing = true;
             isInGame = false;
             Dispose().Forget();
         }
@@ -30,8 +33,9 @@ public class Ball : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (isInGame && other.CompareTag(KillZone)) 
+        if (!isDisposing && other.CompareTag(TagHelper.KillZone)) 
         {
+            isDisposing = true;
             isInGame = false;
             Dispose().Forget(); 
         }      

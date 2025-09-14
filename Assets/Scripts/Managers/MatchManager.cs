@@ -16,7 +16,9 @@ public class MatchManager : ScriptableObject
 
     public void RegisterPlayer(Player newPlayer)
     {
-        if (!players.Contains(newPlayer)) players.Add(newPlayer);
+        players.Add(newPlayer);
+        scores.Add(newPlayer, 0f);
+        Debug.Log("Player registered");
         PlayerRegistered?.Invoke(newPlayer);
     }
 
@@ -32,6 +34,7 @@ public class MatchManager : ScriptableObject
     {
         scores[player] = newScore;
         ScoreUpdated?.Invoke((player, newScore));
+        Debug.Log($"Scored! new Score: {newScore}");
     }
 
     public void ResetAllScores() 
