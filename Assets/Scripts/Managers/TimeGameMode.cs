@@ -4,7 +4,7 @@ using System.Threading;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class TimeGameMode : GameMode
+public class TimeGameMode : AGameMode
 {
     public UnityEvent<float> TimeChanged;
 

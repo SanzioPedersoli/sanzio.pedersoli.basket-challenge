@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-public abstract class GameMode : MonoBehaviour
+public abstract class AGameMode : MonoBehaviour
 {
     public UnityEvent GameStarted;
     public UnityEvent GameIsOver;
