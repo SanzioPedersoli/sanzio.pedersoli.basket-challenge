@@ -7,6 +7,8 @@ where GameMode : AGameMode
     [SerializeField] protected Dictionary<Player,PlayerUI> playerUIsByPlayer = new();
     [SerializeField] protected MatchManager matchManager;
     [SerializeField] protected PlayerUI playerUIPrefab;
+    [SerializeField] private Transform playerUIContainer;
+
 
     protected GameMode gameMode;
 
@@ -30,7 +32,7 @@ where GameMode : AGameMode
 
     protected virtual void OnPlayerRegistered(Player player)
     {
-        var inst = Instantiate(playerUIPrefab);
+        var inst = Instantiate(playerUIPrefab, playerUIContainer);
         playerUIsByPlayer.Add(player, inst);
     }
 }
