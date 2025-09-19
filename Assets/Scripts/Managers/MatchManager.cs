@@ -5,7 +5,7 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "MatchManager", menuName = "ScriptableObjects/Managers/Match Manager", order = 1)]
 public class MatchManager : ScriptableObject
 {
-    public GameMode gameMode;
+    public AGameMode gameMode;
 
     public UnityAction<Player> PlayerRegistered;
     public UnityAction<Player> PlayerUnRegistered;

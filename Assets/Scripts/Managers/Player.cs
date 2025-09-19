@@ -4,6 +4,7 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
+    public UnityEvent ReadyToShot;
     public UnityEvent BallShot;
 
     private bool isReadyToShoot = false;
@@ -27,6 +28,7 @@ public class Player : MonoBehaviour
         shooter.LockProjectile();
         BallShot.AddListener(() => { ball.isInGame = true; });
         isReadyToShoot = true;
+        ReadyToShot?.Invoke();
     }
 
     [Button]
