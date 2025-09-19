@@ -3,7 +3,8 @@ using UnityEngine.Events;
 
 public abstract class AIngamePlayerInput : MonoBehaviour
 {
-    public UnityEvent<float> OnDragFinished;
+    public UnityEvent<float> OnDragFinished = new();
+    public UnityEvent<float> OnValueChanged = new();
 
     public float ValuePerPixel = 0.01f;
     public float MaxDragDuration = 1f;
@@ -11,7 +12,20 @@ public abstract class AIngamePlayerInput : MonoBehaviour
     protected bool isDragging = false;
     protected float dragStartTime;
     protected Vector2 lastPosition;
-    protected float value = 0f;
+
+    private float inputValue = 0f;
+    protected float Value 
+    {
+        get 
+        { 
+            return inputValue; 
+        } 
+        set
+        {
+            inputValue = value;
+            OnValueChanged?.Invoke(inputValue);
+        }
+    }
 
     protected void Update()
     {
@@ -26,7 +40,7 @@ public abstract class AIngamePlayerInput : MonoBehaviour
         isDragging = true;
         dragStartTime = Time.time;
         lastPosition = startPos;
-        value = 0f;
+        Value = 0f;
     }
 
     protected void ContinueDrag(Vector2 currentPos)
@@ -41,7 +55,7 @@ public abstract class AIngamePlayerInput : MonoBehaviour
 
         if (delta.y > 0)
         {
-            value += delta.y * ValuePerPixel;
+            Value += delta.y * ValuePerPixel;
         }
 
         lastPosition = currentPos;
@@ -50,7 +64,8 @@ public abstract class AIngamePlayerInput : MonoBehaviour
     protected void EndDrag()
     {
         isDragging = false;
-        OnDragFinished?.Invoke(value);
+        OnDragFinished?.Invoke(Value);
+        print(Value);
     }
 
 }
