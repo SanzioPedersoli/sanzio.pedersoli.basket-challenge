@@ -18,7 +18,6 @@ public class MatchManager : ScriptableObject
     {
         players.Add(newPlayer);
         scores.Add(newPlayer, 0f);
-        Debug.Log("Player registered");
         PlayerRegistered?.Invoke(newPlayer);
     }
 
