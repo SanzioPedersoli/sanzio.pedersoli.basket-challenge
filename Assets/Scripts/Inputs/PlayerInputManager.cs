@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,9 @@ using IngamePlayerInput = IngamePlayerMouseInput;
 [RequireComponent(typeof(InputRangeMaker))]
 public class PlayerInputManager : MonoBehaviour
 {
+    public event Action<float> DragFinished;
+    public event Action<float> ValueChanged;
+
     [SerializeField] private float valuePerPixel = 0.01f;
     [SerializeField] private float maxDragDuration = 1f;
 
@@ -26,9 +30,12 @@ public class PlayerInputManager : MonoBehaviour
         input.ValuePerPixel = valuePerPixel;
         input.MaxDragDuration = maxDragDuration;
 
-        input.OnDragFinished.AddListener(value => {
+        input.ValueChanged += value => ValueChanged?.Invoke(value);
+
+        input.DragFinished += (value => {
             var error = inputRangeMaker.GetErrorFromRange(value);
             player.StartShot(error);
+            DragFinished?.Invoke(error);
         });        
     }
 }

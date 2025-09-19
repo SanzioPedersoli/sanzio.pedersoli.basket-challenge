@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 public abstract class AIngamePlayerInput : MonoBehaviour
 {
-    public UnityEvent<float> OnDragFinished = new();
-    public UnityEvent<float> OnValueChanged = new();
+    public event Action<float> DragFinished;
+    public event Action<float> ValueChanged;
 
     public float ValuePerPixel = 0.01f;
     public float MaxDragDuration = 1f;
@@ -23,7 +24,7 @@ public abstract class AIngamePlayerInput : MonoBehaviour
         set
         {
             inputValue = value;
-            OnValueChanged?.Invoke(inputValue);
+            ValueChanged?.Invoke(inputValue);
         }
     }
 
@@ -64,8 +65,7 @@ public abstract class AIngamePlayerInput : MonoBehaviour
     protected void EndDrag()
     {
         isDragging = false;
-        OnDragFinished?.Invoke(Value);
-        print(Value);
+        DragFinished?.Invoke(Value);
     }
 
 }
