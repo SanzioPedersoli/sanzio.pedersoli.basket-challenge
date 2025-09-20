@@ -1,11 +1,12 @@
 using Cysharp.Threading.Tasks;
+using System;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Starter : MonoBehaviour
 {
-    private readonly UnityEvent<int> NewCountdownNumberReached;
+    public event Action<int> NewCountdownNumberReached;
 
     [SerializeField] MatchManager matchManager;
     [SerializeField] private int countDownAmount = 3;
@@ -18,10 +19,9 @@ public class Starter : MonoBehaviour
         currentTime = countDownAmount;
         while (currentTime >= 0)
         {
-            print($"Starting in: {currentTime}");
+            NewCountdownNumberReached?.Invoke(currentTime);
             await UniTask.WaitForSeconds(1).AttachExternalCancellation(cancellationTokenSource.Token);
             currentTime--;
-            NewCountdownNumberReached?.Invoke(currentTime);
         }
         matchManager.gameMode.StartGame();
     }

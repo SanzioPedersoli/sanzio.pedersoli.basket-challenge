@@ -243,6 +243,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6449475361574788082, guid: 817f09e85beef4b4e92aa375e8eacea2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -66.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6449475361574788083, guid: 817f09e85beef4b4e92aa375e8eacea2, type: 3}
+      propertyPath: m_Name
+      value: TimerText
+      objectReference: {fileID: 0}
+    - target: {fileID: 6449475362702516421, guid: 817f09e85beef4b4e92aa375e8eacea2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6449475362702516423, guid: 817f09e85beef4b4e92aa375e8eacea2, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 207.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6449475362869036794, guid: 817f09e85beef4b4e92aa375e8eacea2, type: 3}
       propertyPath: timerText
       value: 
