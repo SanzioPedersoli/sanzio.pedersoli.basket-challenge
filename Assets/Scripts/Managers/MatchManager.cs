@@ -33,7 +33,6 @@ public class MatchManager : ScriptableObject
     {
         scores[player] = newScore;
         ScoreUpdated?.Invoke((player, newScore));
-        Debug.Log($"Scored! new Score: {newScore}");
     }
 
     public void ResetAllScores() 

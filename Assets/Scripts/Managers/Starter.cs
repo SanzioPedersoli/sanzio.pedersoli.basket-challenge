@@ -28,7 +28,6 @@ public class Starter : MonoBehaviour
 
     private void OnDestroy()
     {
-        cancellationTokenSource.Cancel();
         cancellationTokenSource.Dispose();
     }
 }

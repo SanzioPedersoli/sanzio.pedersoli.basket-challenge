@@ -10,7 +10,7 @@ public class Basket : MonoBehaviour
         {
             if (!ball.isInGame) return;
 
-            matchManager.AddScore(ball.owner, ball.score);
+            matchManager.AddScore(ball.owner, ball.GetScore());
             ball.isInGame = false;
         }
     }

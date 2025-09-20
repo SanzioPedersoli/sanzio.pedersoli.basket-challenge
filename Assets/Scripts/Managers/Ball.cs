@@ -1,25 +1,42 @@
 ﻿using Cysharp.Threading.Tasks;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Ball : MonoBehaviour
 {
-    private const float DestructionDelay = 2f;
-    private const float DestructionFloorLevel = -1f;
+    [SerializeField] private float DestructionDelay = 2f;
+    [SerializeField] private float DestructionFloorLevel = -1f;
 
     public UnityEvent BecameOutOfGame;
 
     public Player owner;
-    public float score;
-
+    [SerializeField] private int InitialScore = 2;
     [SerializeField] private Rigidbody rb;
 
     public Rigidbody Rigidbody => rb;
 
-
     public bool isInGame = false;
     private bool isDisposing = false;
+    private List<ABonus> bonuses = new();
+
+    public int GetScore()
+    {
+        int score = InitialScore;
+        int multiplier = 1;
+        foreach (var bonus in bonuses)
+        {
+            multiplier += bonus.MultiplierBonus;
+            score += bonus.AdditiveBonus;
+        }
+        return score*multiplier;
+    }
+
+    public void AddBonus(ABonus bonus)
+    {
+        bonuses.Add(bonus);
+    }
 
     private void Update()
     {

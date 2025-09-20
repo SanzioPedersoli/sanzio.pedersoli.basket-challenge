@@ -95,7 +95,7 @@ GameObject:
   m_Layer: 0
   m_Name: ShooterHand
   m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 3112488685142674786}
   - component: {fileID: 7210613370953603072}
   - component: {fileID: 6894157488392546951}
+  - component: {fileID: 1963564794468231487}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -337,6 +338,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fieldManager: {fileID: 11400000, guid: 68d0efc85c47a4c4993926131ad23175, type: 2}
+--- !u!114 &1963564794468231487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3112488685380735151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a60af00126bde1c4084fb9934b57b7bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerBallManager: {fileID: 3112488685142674786}
+  multiplier: 2
+  incrementPerScoredShot: 0.25
+  onFireDuration: 7
+  fireVFX: {fileID: 7647388032240803686, guid: df643283b70235444a73835951adc311, type: 3}
+  matchManager: {fileID: 11400000, guid: d356c3884908d7e499aa6725f9c19673, type: 2}
 --- !u!1001 &8654226596719622141
 PrefabInstance:
   m_ObjectHideFlags: 0
