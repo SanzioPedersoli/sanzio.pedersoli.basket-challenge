@@ -1,4 +1,7 @@
-﻿public class SimpleBonus : ABonus
+﻿using System;
+
+[Serializable]
+public class SimpleBonus : ABonus
 {
     private readonly int additiveBonus;
     private readonly int multiplierBonus;

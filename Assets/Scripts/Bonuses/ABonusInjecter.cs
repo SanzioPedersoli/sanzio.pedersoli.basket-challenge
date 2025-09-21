@@ -4,7 +4,9 @@ using UnityEngine;
 public abstract class ABonusInjecter<Bonus> : MonoBehaviour 
 where Bonus : ABonus
 {
-    protected event Action<Bonus> BonusInjected;
+    public event Action<Bonus> BonusInjected;
+
+    public Ball Ball => currentBall;
 
     protected Ball currentBall;
 

@@ -212,6 +212,8 @@ GameObject:
   - component: {fileID: 7210613370953603072}
   - component: {fileID: 6894157488392546951}
   - component: {fileID: 1963564794468231487}
+  - component: {fileID: 3217372957787948784}
+  - component: {fileID: 1703567773403404270}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -356,6 +358,36 @@ MonoBehaviour:
   onFireDuration: 7
   fireVFX: {fileID: 7647388032240803686, guid: df643283b70235444a73835951adc311, type: 3}
   matchManager: {fileID: 11400000, guid: d356c3884908d7e499aa6725f9c19673, type: 2}
+--- !u!114 &3217372957787948784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3112488685380735151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 787bedc50ddd53447acacad8f5413ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerBallManager: {fileID: 3112488685142674786}
+  player: {fileID: 3112488685142674787}
+  errorMargin: 0.1
+--- !u!114 &1703567773403404270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3112488685380735151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84490f40bd5351f4882a09533cfca451, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  perfectShotBonusInjecter: {fileID: 3217372957787948784}
+  perfectVFXsTrail: {fileID: 7647388032240803686, guid: db3967b355f621b40ad6b74c2671ff9e, type: 3}
+  perfectVFXsCelebration: {fileID: 7647388032240803686, guid: 81970a063b271b640ac568e8ecb1f624, type: 3}
 --- !u!1001 &8654226596719622141
 PrefabInstance:
   m_ObjectHideFlags: 0

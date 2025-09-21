@@ -1,5 +1,4 @@
 ﻿using Cysharp.Threading.Tasks;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -30,7 +29,6 @@ public class Ball : MonoBehaviour
             multiplier *= bonus.MultiplierBonus;
             score += bonus.AdditiveBonus;
         }
-        print($"Total multiplier: {multiplier}, total score:{score}.");
         return score*multiplier;
     }
 
