@@ -12,6 +12,7 @@ public class Basket : MonoBehaviour
 
             matchManager.AddScore(ball.owner, ball.GetScore());
             ball.isInGame = false;
+            ball.OnScore();
         }
     }
 }

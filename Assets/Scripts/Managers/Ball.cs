@@ -20,6 +20,11 @@ public class Ball : MonoBehaviour
     private bool isDisposing = false;
     private List<ABonus> bonuses = new();
 
+    public void OnScore()
+    {
+        foreach (var bonus in bonuses) bonus.OnBallScored();
+    }
+
     public int GetScore()
     {
         int score = InitialScore;
