@@ -6,13 +6,7 @@ where Bonus : ABonus
 {
     protected event Action<Bonus> BonusInjected;
 
-    [SerializeField] protected PlayerBallManager playerBallManager;
     protected Ball currentBall;
-
-    protected virtual void Awake()
-    {
-        playerBallManager.NewBallReady.AddListener(ball => currentBall = ball);
-    }
 
     protected abstract Bonus GetNewBonus();
 

@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class Ball : MonoBehaviour
 {
-    [SerializeField] private float DestructionDelay = 2f;
+    [SerializeField] private float DestructionDelay = 0.7f;
     [SerializeField] private float DestructionFloorLevel = -1f;
 
     public UnityEvent BecameOutOfGame;
@@ -27,9 +27,10 @@ public class Ball : MonoBehaviour
         int multiplier = 1;
         foreach (var bonus in bonuses)
         {
-            multiplier += bonus.MultiplierBonus;
+            multiplier *= bonus.MultiplierBonus;
             score += bonus.AdditiveBonus;
         }
+        print($"Total multiplier: {multiplier}, total score:{score}.");
         return score*multiplier;
     }
 

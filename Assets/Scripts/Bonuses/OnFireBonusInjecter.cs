@@ -8,6 +8,7 @@ public class OnFireBonusInjecter : ABonusInjecter<SimpleBonus>
     public event Action<float> OnfireTimeChanged;
     public event Action<float> OnfirePercentageChanged;
 
+    [SerializeField] private PlayerBallManager playerBallManager;
     [SerializeField] private int multiplier = 2;
     [SerializeField] private float incrementPerScoredShot = 0.25f;
     [SerializeField] private float onFireDuration = 7;
@@ -66,9 +67,8 @@ public class OnFireBonusInjecter : ABonusInjecter<SimpleBonus>
         }
     }
 
-    protected override void Awake()
+    protected void Awake()
     {
-        base.Awake();
         playerBallManager.NewBallReady.AddListener(OnNewBallReady);        
         matchManager.ScoreUpdated += OnScoreUpdated;
     }
@@ -93,12 +93,12 @@ public class OnFireBonusInjecter : ABonusInjecter<SimpleBonus>
         }
     }
 
-    private void OnNewBallReady(Ball _)
+    private void OnNewBallReady(Ball ball)
     {
+        currentBall = ball;
         currentBall.BecameOutOfGame.AddListener(OnBallBecameOutOfGame);
         if (isOnfire)
         {
-            print("injecting");
             InjectBonus();
             Instantiate(fireVFX, currentBall.transform);
         }
