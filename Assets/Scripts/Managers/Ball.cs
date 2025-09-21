@@ -22,7 +22,12 @@ public class Ball : MonoBehaviour
 
     public void OnScore()
     {
-        foreach (var bonus in bonuses) bonus.OnBallScored();
+        if (bonuses == null) return;
+        foreach (var bonus in bonuses) 
+        { 
+            if (bonus == null) continue;
+            bonus.OnBallScored?.Invoke(); 
+        }
     }
 
     public int GetScore()

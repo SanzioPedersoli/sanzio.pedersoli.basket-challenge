@@ -27,15 +27,25 @@ public class PlayerInputManager : MonoBehaviour
         inputRangeMaker = GetComponent<InputRangeMaker>();
         player = GetComponent<Player>();
         var input = gameObject.AddComponent<IngamePlayerInput>();
+
         input.ValuePerPixel = valuePerPixel;
         input.MaxDragDuration = maxDragDuration;
 
-        input.ValueChanged += value => ValueChanged?.Invoke(value);
+        input.ValueChanged += OnValueChanged;
+        input.DragFinished += OnDragFinished;        
+    }
 
-        input.DragFinished += (value => {
-            var error = inputRangeMaker.GetErrorFromRange(value);
-            player.StartShot(error);
-            DragFinished?.Invoke(error);
-        });        
+    private void OnValueChanged(float newValue)
+    {
+        if (!player.IsReadyToShoot) return;
+        ValueChanged?.Invoke(newValue);
+    }
+
+    private void OnDragFinished(float value)
+    {
+        if (!player.IsReadyToShoot) return;
+        var error = inputRangeMaker.GetErrorFromRange(value);
+        player.StartShot(error);
+        DragFinished?.Invoke(error);
     }
 }

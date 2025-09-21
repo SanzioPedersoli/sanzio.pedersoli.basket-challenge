@@ -5,8 +5,8 @@ public class OnFireBonusInjecter : ABonusInjecter<SimpleBonus>
 {
     public event Action BecomeOnFire;
     public event Action InterrupdtedOnFire;
-    public event Action<float> OnfireTimeChanged;
-    public event Action<float> OnfirePercentageChanged;
+    public event Action<float> FireTimeChanged;
+    public event Action<float> FirePercentageChanged;
 
     [SerializeField] private PlayerBallManager playerBallManager;
     [SerializeField] private int multiplier = 2;
@@ -43,7 +43,7 @@ public class OnFireBonusInjecter : ABonusInjecter<SimpleBonus>
         get => currentOnFireTime; 
         set 
         {
-            OnfireTimeChanged?.Invoke(value);
+            FireTimeChanged?.Invoke(value);
             currentOnFireTime = value;
         } 
     }
@@ -54,7 +54,7 @@ public class OnFireBonusInjecter : ABonusInjecter<SimpleBonus>
         set 
         {
             onFirePercentage = value;
-            OnfirePercentageChanged?.Invoke(value);
+            FirePercentageChanged?.Invoke(value);
         } 
     }
 

@@ -20,7 +20,7 @@ public class BackStopBonus : ABonusInjecter<SimpleBonus>
     private float currentTime;
 
     protected override SimpleBonus GetNewBonus() => new(currentAdditiveBonus, 1);
-    private void OnDestroy() => cancellationTokenSource.Dispose();
+    private void OnDestroy() => cancellationTokenSource?.Dispose();
 
     private int GetBonusValue()
     {
@@ -40,7 +40,7 @@ public class BackStopBonus : ABonusInjecter<SimpleBonus>
     private void Start()
     {
         StartBonusCycle().Forget();
-        matchManager.gameMode.GameIsOver.AddListener(() => cancellationTokenSource.Dispose());
+        matchManager.gameMode.GameIsOver.AddListener(() => cancellationTokenSource.Cancel());
     }
 
     private async UniTask StartBonusCycle()

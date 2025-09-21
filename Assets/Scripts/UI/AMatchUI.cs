@@ -9,7 +9,6 @@ where GameMode : AGameMode
     [SerializeField] protected PlayerUI playerUIPrefab;
     [SerializeField] private Transform playerUIContainer;
 
-
     protected GameMode gameMode;
 
     protected virtual void Awake()
@@ -33,6 +32,7 @@ where GameMode : AGameMode
     protected virtual void OnPlayerRegistered(Player player)
     {
         var inst = Instantiate(playerUIPrefab, playerUIContainer);
+        inst.onFireBonusInjecter = player.GetComponent<OnFireBonusInjecter>();
         playerUIsByPlayer.Add(player, inst);
     }
 }

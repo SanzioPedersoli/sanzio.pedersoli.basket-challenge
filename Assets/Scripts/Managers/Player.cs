@@ -6,13 +6,14 @@ public class Player : MonoBehaviour
 {
     public UnityEvent ReadyToShot;
     public UnityEvent<float> BallShot;
-
-    private bool isReadyToShoot = false;
+    public bool IsReadyToShoot => isReadyToShoot;
 
     [SerializeField] private MatchManager matchManager;
     [SerializeField] private Shooter shooter;
     [SerializeField] private PlayerBallManager ballManager;
     [SerializeField] private PlayerMover mover;
+
+    private bool isReadyToShoot = false;
 
     private void Awake()
     {
