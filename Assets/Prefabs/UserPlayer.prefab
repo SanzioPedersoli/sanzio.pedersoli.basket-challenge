@@ -25,14 +25,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 719575440147591872}
-  m_LocalRotation: {x: 0.09256031, y: -0.08097589, z: 0.0075267404, w: 0.99238044}
+  m_LocalRotation: {x: 0.047386944, y: -0.081236556, z: 0.0038405058, w: 0.9955603}
   m_LocalPosition: {x: 0.55, y: 1.960279, z: -1.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2349227116963104015}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 5.45, y: -9.33, z: -0.003}
 --- !u!20 &4698973068816097352
 Camera:
   m_ObjectHideFlags: 0
@@ -91,9 +91,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1703567773403404270, guid: 22df5c8949130464a9cac67513a80385, type: 3}
+      propertyPath: perfectVFXsTrail
+      value: 
+      objectReference: {fileID: 7647388032240803686, guid: 2fb1b7d6d1c8e36429a4cdf0913799af, type: 3}
+    - target: {fileID: 1703567773403404270, guid: 22df5c8949130464a9cac67513a80385, type: 3}
+      propertyPath: perfectVFXsCelebration
+      value: 
+      objectReference: {fileID: 7647388032240803686, guid: eff5911454924d14eb85b4651a8450fa, type: 3}
     - target: {fileID: 3112488684344172420, guid: 22df5c8949130464a9cac67513a80385, type: 3}
       propertyPath: m_Icon
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3112488685106734622, guid: 22df5c8949130464a9cac67513a80385, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3112488685142674787, guid: 22df5c8949130464a9cac67513a80385, type: 3}
       propertyPath: ReadyToShot.m_PersistentCalls.m_Calls.Array.size

@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public class Player : MonoBehaviour
 {
     public UnityEvent ReadyToShot;
-    public UnityEvent BallShot;
+    public UnityEvent<float> BallShot;
 
     private bool isReadyToShoot = false;
 
@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
         ball.owner = this;
         shooter.Projectile = ball.Rigidbody;
         shooter.LockProjectile();
-        BallShot.AddListener(() => { ball.isInGame = true; });
+        BallShot.AddListener(_ => { ball.isInGame = true; });
         isReadyToShoot = true;
         ReadyToShot?.Invoke();
     }
@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
     {
         if (!isReadyToShoot) return;
         isReadyToShoot = false;
-        BallShot?.Invoke();
+        BallShot?.Invoke(error);
         BallShot.RemoveAllListeners();
         shooter.UnlockAndShoot(error);
     }

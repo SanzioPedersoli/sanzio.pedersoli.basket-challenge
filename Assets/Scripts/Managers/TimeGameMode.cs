@@ -23,7 +23,6 @@ public class TimeGameMode : AGameMode
 
     private void OnDestroy()
     {
-        cancellationTokenSource.Cancel();
         cancellationTokenSource.Dispose();
     }
 
@@ -31,7 +30,6 @@ public class TimeGameMode : AGameMode
     {
         currentTime = gameDurationSeconds;
         base.StartGame();
-        print("GameOn");
         while (currentTime > 0) 
         {
             await UniTask.WaitForSeconds(UpdateInterval).AttachExternalCancellation(cancellationTokenSource.Token);
