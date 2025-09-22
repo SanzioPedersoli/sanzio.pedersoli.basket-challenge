@@ -214,6 +214,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreVfx: {fileID: 1537012118498481437}
   matchManager: {fileID: 11400000, guid: d356c3884908d7e499aa6725f9c19673, type: 2}
+--- !u!1 &1507143203
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1507143205}
+  - component: {fileID: 1507143204}
+  m_Layer: 0
+  m_Name: FieldInfo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1507143204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507143203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05148f4612b68cd4795bd940c72b0b92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FieldManager: {fileID: 11400000, guid: 68d0efc85c47a4c4993926131ad23175, type: 2}
+  Target: {fileID: 1537012118498481439}
+  PlacementArea: {fileID: 1537012118498481438}
+--- !u!4 &1507143205
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507143203}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 169.13269, y: 254.7103, z: 198.44757}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &742028079877357421
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -347,6 +394,16 @@ PrefabInstance:
 --- !u!198 &1537012118498481437 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 3495989992038365601, guid: 6f41084207d0a2a49aaaf521875f32c3, type: 3}
+  m_PrefabInstance: {fileID: 1537012118498481436}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1537012118498481438 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 1537012117330898245, guid: 6f41084207d0a2a49aaaf521875f32c3, type: 3}
+  m_PrefabInstance: {fileID: 1537012118498481436}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1537012118498481439 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6208069240914735620, guid: 6f41084207d0a2a49aaaf521875f32c3, type: 3}
   m_PrefabInstance: {fileID: 1537012118498481436}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2349227116733503741

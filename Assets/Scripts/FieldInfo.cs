@@ -1,9 +1,13 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "FieldInfo", menuName = "ScriptableObjects/Field info", order = 1)]
-public class FieldInfo : ScriptableObject
+public class FieldInfo : MonoBehaviour
 {
-    public Transform Target;
-    public Collider PlacementArea;
-    public string SceneName;
+    [SerializeReference] public FieldManager FieldManager;
+    [SerializeReference] public Transform Target;
+    [SerializeReference] public Collider PlacementArea;
+
+    private void Awake()
+    {
+        FieldManager.FieldInfo = this;
+    }
 }
