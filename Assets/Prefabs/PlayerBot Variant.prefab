@@ -53,8 +53,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3112488685380735151, guid: 22df5c8949130464a9cac67513a80385, type: 3}
       propertyPath: m_Name
-      value: PlayerBot
+      value: PlayerBot Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 8430610399365057682, guid: 22df5c8949130464a9cac67513a80385, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b23fb7b6a3fc8714e883ec73f298fef1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22df5c8949130464a9cac67513a80385, type: 3}
 --- !u!1 &1877753997078699985 stripped

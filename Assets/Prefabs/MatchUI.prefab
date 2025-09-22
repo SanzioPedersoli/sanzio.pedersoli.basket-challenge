@@ -230,7 +230,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 1
-  m_Spacing: 8.6
+  m_Spacing: 18
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1
@@ -292,6 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   matchManager: {fileID: 11400000, guid: d356c3884908d7e499aa6725f9c19673, type: 2}
   playerUIPrefab: {fileID: 0}
+  playerUIContainer: {fileID: 0}
   timerText: {fileID: 0}
   gameModeAnimator: {fileID: 6449475362869036795}
 --- !u!95 &6449475362869036795

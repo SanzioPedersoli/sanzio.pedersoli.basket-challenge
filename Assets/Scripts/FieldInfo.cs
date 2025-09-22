@@ -1,4 +1,3 @@
-using UnityEngine.SceneManagement;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "FieldInfo", menuName = "ScriptableObjects/Field info", order = 1)]

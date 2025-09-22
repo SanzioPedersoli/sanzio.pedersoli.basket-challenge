@@ -354,7 +354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerBallManager: {fileID: 3112488685142674786}
   multiplier: 2
-  incrementPerScoredShot: 0.25
+  incrementPerScoredShot: 0.2
   onFireDuration: 7
   fireVFX: {fileID: 7647388032240803686, guid: df643283b70235444a73835951adc311, type: 3}
   matchManager: {fileID: 11400000, guid: d356c3884908d7e499aa6725f9c19673, type: 2}
