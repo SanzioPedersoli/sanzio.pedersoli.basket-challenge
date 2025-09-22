@@ -225,7 +225,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abbc8bd121400dd4b8ab9dde28bab9d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: Gameplay_BaseCourtScene
+  SceneName: Starter Field
 --- !u!4 &177599891
 Transform:
   m_ObjectHideFlags: 0
@@ -1473,18 +1473,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1976090112055305200, guid: 8b2435e140b8d4a439fe6c36f95acab8, type: 3}
-      propertyPath: m_Alpha
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1976090112055305200, guid: 8b2435e140b8d4a439fe6c36f95acab8, type: 3}
-      propertyPath: m_Interactable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1976090112055305200, guid: 8b2435e140b8d4a439fe6c36f95acab8, type: 3}
-      propertyPath: m_BlocksRaycasts
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1976090112055305212, guid: 8b2435e140b8d4a439fe6c36f95acab8, type: 3}
       propertyPath: m_Name
       value: SettingsPanel
@@ -1573,5 +1561,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3030947315614586179, guid: 8b2435e140b8d4a439fe6c36f95acab8, type: 3}
+      propertyPath: sceneLoader
+      value: 
+      objectReference: {fileID: 177599890}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b2435e140b8d4a439fe6c36f95acab8, type: 3}

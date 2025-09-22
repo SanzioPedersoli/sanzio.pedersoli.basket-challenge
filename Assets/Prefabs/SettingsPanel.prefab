@@ -2224,6 +2224,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1976090112055305213}
+  - component: {fileID: 3030947315614586179}
   - component: {fileID: 1976090112055305215}
   - component: {fileID: 1976090112055305214}
   - component: {fileID: 1976090112055305200}
@@ -2257,6 +2258,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -40, y: -40}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &3030947315614586179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976090112055305212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04c0f902481e127438da2b6ab761865c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfBotsSlider: {fileID: 1976090112132557659}
+  numberOfBotsLabel: {fileID: 1976090111211211854}
+  fieldSelector: {fileID: 1976090113145950631}
+  gameModeSelector: {fileID: 1976090111869402936}
+  sceneLoader: {fileID: 0}
+  matchSettings: {fileID: 11400000, guid: 74f1557b1e47a874d89844377508510c, type: 2}
+  availableGameModes:
+  - {fileID: 6548405112847854544, guid: d36c572aede56074a86dc69b2ba3ad89, type: 3}
 --- !u!222 &1976090112055305215
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2303,9 +2324,9 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1976090112055305212}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &1976090112132557657
 GameObject:
