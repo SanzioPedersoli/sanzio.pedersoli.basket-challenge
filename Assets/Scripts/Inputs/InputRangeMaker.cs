@@ -27,7 +27,7 @@ public class InputRangeMaker : MonoBehaviour
 
     public float GetErrorFromRange(float range)
     {
-        var error = Mathf.Abs(currentRange - range) / currentRange;
+        var error = -(currentRange - range) / currentRange;
         return error;
     }
 }
