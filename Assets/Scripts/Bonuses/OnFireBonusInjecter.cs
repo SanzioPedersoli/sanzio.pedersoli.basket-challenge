@@ -4,7 +4,7 @@ using UnityEngine;
 public class OnFireBonusInjecter : ABonusInjecter<SimpleBonus>
 {
     public event Action BecomeOnFire;
-    public event Action InterrupdtedOnFire;
+    public event Action InterruptedOnFire;
     public event Action<float> FireTimeChanged;
     public event Action<float> FirePercentageChanged;
 
@@ -33,7 +33,7 @@ public class OnFireBonusInjecter : ABonusInjecter<SimpleBonus>
             }
             else
             {
-                InterrupdtedOnFire?.Invoke();
+                InterruptedOnFire?.Invoke();
             }
         } 
     }
@@ -82,8 +82,9 @@ public class OnFireBonusInjecter : ABonusInjecter<SimpleBonus>
         }
     }
 
-    private void OnScoreUpdated((Player, float) _)
+    private void OnScoreUpdated((Player player, float newScore) data)
     {
+        if (currentBall.owner != data.player) return;
         haveScoredInthisShot = true;
         OnFirePercentage += incrementPerScoredShot;
         if (OnFirePercentage >= 1)

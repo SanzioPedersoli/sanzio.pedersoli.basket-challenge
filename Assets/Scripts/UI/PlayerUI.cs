@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class PlayerUI : MonoBehaviour
 {
+    [SerializeField] private Sprite playerBackground;
+
     [SerializeField] private TMP_Text scoreLabel;
     [SerializeField] private Slider onFireSlider;
     [SerializeField] private Image Background;
@@ -13,7 +15,7 @@ public class PlayerUI : MonoBehaviour
     private void Start()
     {
         onFireBonusInjecter.BecomeOnFire += OnBecomeOnFire;
-        onFireBonusInjecter.InterrupdtedOnFire += OnInterrupdtedOnFire;
+        onFireBonusInjecter.InterruptedOnFire += OnInterrupdtedOnFire;
         onFireBonusInjecter.FirePercentageChanged += OnFirePercentageChanged;
         onFireBonusInjecter.FireTimeChanged += OnFireTimeChanged;
     }
@@ -41,5 +43,11 @@ public class PlayerUI : MonoBehaviour
     public void SetScore(float newScore)
     {
         scoreLabel.text = newScore.ToString();
+    }
+
+    internal void MakePG()
+    {
+        Background.sprite = playerBackground;
+        transform.SetAsFirstSibling();
     }
 }

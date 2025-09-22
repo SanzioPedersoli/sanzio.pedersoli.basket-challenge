@@ -34,5 +34,9 @@ where GameMode : AGameMode
         var inst = Instantiate(playerUIPrefab, playerUIContainer);
         inst.onFireBonusInjecter = player.GetComponent<OnFireBonusInjecter>();
         playerUIsByPlayer.Add(player, inst);
+        if (player.TryGetComponent<PlayerInputManager>(out _))
+        {
+            inst.MakePG();
+        }
     }
 }

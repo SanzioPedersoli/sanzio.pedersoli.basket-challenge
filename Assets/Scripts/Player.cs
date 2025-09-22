@@ -18,7 +18,11 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         ballManager.NewBallReady.AddListener(InitialaizeShot);
-        matchManager.RegisterPlayer(this);
+    }
+
+    private void Start()
+    {
+        matchManager.RegisterPlayer(this);        
     }
 
     private void InitialaizeShot(Ball ball)

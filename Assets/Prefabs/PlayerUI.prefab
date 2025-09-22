@@ -557,7 +557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.87058824}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -834,6 +834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee469079b903d02429e5ac68c27cb509, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerBackground: {fileID: 21300000, guid: 58b7f8a32df412f4c9d8c4d65a28eadf, type: 3}
   scoreLabel: {fileID: 954556322254160460}
   onFireSlider: {fileID: 3583723659993521636}
   Background: {fileID: 2452060408881218417}
