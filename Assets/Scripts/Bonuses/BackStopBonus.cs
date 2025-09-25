@@ -40,7 +40,7 @@ public class BackStopBonus : ABonusInjecter<SimpleBonus>
     private void Start()
     {
         StartBonusCycle().Forget();
-        matchManager.gameMode.GameIsOver.AddListener(() => cancellationTokenSource.Cancel());
+        matchManager.GameMode.GameIsOver.AddListener(() => cancellationTokenSource.Cancel());
     }
 
     private async UniTask StartBonusCycle()
@@ -54,6 +54,6 @@ public class BackStopBonus : ABonusInjecter<SimpleBonus>
         }
         currentAdditiveBonus = GetBonusValue();
         NewBonusValue?.Invoke(currentAdditiveBonus);
-        if (matchManager.gameMode.IsGameOn) StartBonusCycle().Forget();
+        if (matchManager.GameMode.IsGameOn) StartBonusCycle().Forget();
     }
 }

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
+using Sirenix.OdinInspector;
 
 public class SettingsPanel : MonoBehaviour
 {
@@ -13,8 +14,8 @@ public class SettingsPanel : MonoBehaviour
 
     [Header("Game References")]
     [SerializeField] private SceneLoader sceneLoader;
-    [SerializeField] private MatchSettings matchSettings;
     [SerializeField] private List<AGameMode> availableGameModes;
+    [HideInEditorMode][SerializeField] private MatchSettings matchSettings;
 
     private void Awake()
     {
@@ -66,14 +67,4 @@ public class SettingsPanel : MonoBehaviour
     {
         sceneLoader.LoadScene(matchSettings.field);
     }
-}
-
-
-
-[CreateAssetMenu(fileName = "MatchSettings", menuName = "ScriptableObjects/Match Settings", order = 1)]
-public class MatchSettings : ScriptableObject
-{
-    public int numberOfBots;
-    public string field;
-    public AGameMode gameMode;
 }

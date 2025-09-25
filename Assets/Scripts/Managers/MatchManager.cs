@@ -5,10 +5,20 @@ using UnityEngine.Events;
 [CreateAssetMenu(fileName = "MatchManager", menuName = "ScriptableObjects/Managers/Match Manager", order = 1)]
 public class MatchManager : ScriptableObject
 {
-    public AGameMode gameMode;
+    private AGameMode gameMode;
+    public AGameMode GameMode 
+    { 
+        get => gameMode;
+        set 
+        { 
+            gameMode = value;
+            gameMode.GameIsOver.AddListener(OnGameOver);
+        } 
+    }
 
     public UnityAction<Player> PlayerRegistered;
     public UnityAction<Player> PlayerUnRegistered;
+    public UnityAction<Dictionary<Player, float>> GameEnded;
     public UnityAction<(Player, float)> ScoreUpdated;
 
     private List<Player> players = new();
@@ -45,4 +55,9 @@ public class MatchManager : ScriptableObject
     public Dictionary<Player, float> GetAllScores() => new(scores);
 
     public void ResetPlayerScore(Player player) => SetScore(player, 0);
+
+    private void OnGameOver()
+    {
+        GameEnded?.Invoke(new (scores));
+    }
 }

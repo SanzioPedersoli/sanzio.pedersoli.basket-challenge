@@ -37,6 +37,5 @@ public class TimeGameMode : AGameMode
             TimeChanged?.Invoke(currentTime);
         }
         GameIsOver?.Invoke();
-        print("GameOver");
     }
 }
