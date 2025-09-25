@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2349536598831664731}
   - component: {fileID: 6548405112847854544}
   m_Layer: 0
-  m_Name: RegularTimeGameManager
+  m_Name: Timer Game
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -54,5 +54,5 @@ MonoBehaviour:
   TimeChanged:
     m_PersistentCalls:
       m_Calls: []
-  gameDurationSeconds: 60
+  gameDurationSeconds: 10
   UpdateInterval: 1

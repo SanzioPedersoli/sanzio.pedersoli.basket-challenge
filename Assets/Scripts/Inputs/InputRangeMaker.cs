@@ -5,7 +5,7 @@ public class InputRangeMaker : MonoBehaviour
 {
     public event Action<float> NewRangeSet;
 
-    [SerializeField] private FieldInfo fieldInfo;
+    [SerializeField] private FieldManager fieldManager;
     [SerializeField] private Transform startTransform;
 
     private float currentRange;
@@ -22,7 +22,7 @@ public class InputRangeMaker : MonoBehaviour
 
     public void CalculateNewRange()
     {
-        CurrentRange = Vector3.Distance(startTransform.position, fieldInfo.Target.position);
+        CurrentRange = Vector3.Distance(startTransform.position, fieldManager.FieldInfo.Target.position);
     }
 
     public float GetErrorFromRange(float range)

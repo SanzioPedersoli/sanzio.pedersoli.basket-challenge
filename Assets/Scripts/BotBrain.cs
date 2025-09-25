@@ -15,8 +15,12 @@ public class BotBrain : MonoBehaviour
     private void Awake()
     {
         player = GetComponent<Player>();
-        cancellationTokenSource = new CancellationTokenSource();
-        matchManager.gameMode.GameIsOver.AddListener(StopCycle);
+        cancellationTokenSource = new CancellationTokenSource();        
+    }
+
+    private void Start()
+    {
+        matchManager.GameMode.GameIsOver.AddListener(StopCycle);
         StartCycle().Forget();
     }
 

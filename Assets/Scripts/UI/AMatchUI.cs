@@ -13,7 +13,7 @@ where GameMode : AGameMode
 
     protected virtual void Awake()
     {
-        gameMode = (GameMode) matchManager.gameMode;
+        gameMode = (GameMode) matchManager.GameMode;
         matchManager.PlayerRegistered += OnPlayerRegistered;
         matchManager.PlayerUnRegistered += OnPlayerUnRegistered;
         matchManager.ScoreUpdated += OnScoreUpdated;

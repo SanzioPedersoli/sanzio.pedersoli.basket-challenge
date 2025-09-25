@@ -22,7 +22,7 @@ public class Starter : MonoBehaviour
             await UniTask.WaitForSeconds(1).AttachExternalCancellation(cancellationTokenSource.Token);
             currentTime--;
         }
-        matchManager.gameMode.StartGame();
+        matchManager.GameMode.StartGame();
     }
 
     private void OnDestroy()
