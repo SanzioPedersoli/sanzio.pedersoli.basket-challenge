@@ -35,7 +35,7 @@ public class BotBrain : MonoBehaviour
                 float waitTime = difficulty.GetCurrentWait();
                 await UniTask.Delay(TimeSpan.FromSeconds(waitTime), cancellationToken: cancellationTokenSource.Token);
                 if (cancellationTokenSource.Token.IsCancellationRequested) break;
-                TryToShoot();
+                if (matchManager.GameMode.IsGameOn) TryToShoot();
             }
         }
         catch (OperationCanceledException){}

@@ -23,6 +23,7 @@ public class TimeGameMode : AGameMode
 
     private void OnDestroy()
     {
+        cancellationTokenSource.Cancel();
         cancellationTokenSource.Dispose();
     }
 

@@ -6,6 +6,7 @@ public class Basket : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!matchManager.GameMode.IsGameOn) return;
         if (other.CompareTag(TagHelper.Ball) && other.TryGetComponent(out Ball ball))
         {
             if (!ball.isInGame) return;

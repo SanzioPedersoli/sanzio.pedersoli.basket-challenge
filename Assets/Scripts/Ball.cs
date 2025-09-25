@@ -1,5 +1,6 @@
 ﻿using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -19,6 +20,7 @@ public class Ball : MonoBehaviour
     public bool isInGame = false;
     private bool isDisposing = false;
     private List<ABonus> bonuses = new();
+    private CancellationTokenSource cancellationTokenSource = new();
 
     public void OnScore()
     {
@@ -69,8 +71,14 @@ public class Ball : MonoBehaviour
 
     private async UniTask Dispose()
     {
-        await UniTask.WaitForSeconds(DestructionDelay);
+        await UniTask.WaitForSeconds(DestructionDelay).AttachExternalCancellation(cancellationTokenSource.Token);
         BecameOutOfGame?.Invoke();
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        cancellationTokenSource.Cancel();
+        cancellationTokenSource.Dispose();
     }
 }

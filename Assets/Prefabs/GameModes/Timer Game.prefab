@@ -54,5 +54,5 @@ MonoBehaviour:
   TimeChanged:
     m_PersistentCalls:
       m_Calls: []
-  gameDurationSeconds: 10
+  gameDurationSeconds: 60
   UpdateInterval: 1
