@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
+[Serializable]
 [CreateAssetMenu(fileName = "MatchSettings", menuName = "ScriptableObjects/Match Settings", order = 1)]
 public class MatchSettings : ScriptableObject
 {

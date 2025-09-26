@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
+using UnityEngine.Scripting;
 using Random = UnityEngine.Random;
 
+[Preserve]
 [CreateAssetMenu(fileName = "BotDifficultyData", menuName = "ScriptableObjects/BotDifficultyData", order = 1)]
 public class BotDifficultyData : ScriptableObject
 {

@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[Serializable]
 [CreateAssetMenu(fileName = "MatchManager", menuName = "ScriptableObjects/Managers/Match Manager", order = 1)]
 public class MatchManager : ScriptableObject
 {

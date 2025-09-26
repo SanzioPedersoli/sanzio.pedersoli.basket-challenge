@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
-using Sirenix.OdinInspector;
 
 public class SettingsPanel : MonoBehaviour
 {
@@ -15,10 +14,12 @@ public class SettingsPanel : MonoBehaviour
     [Header("Game References")]
     [SerializeField] private SceneLoader sceneLoader;
     [SerializeField] private List<AGameMode> availableGameModes;
-    [HideInEditorMode][SerializeField] private MatchSettings matchSettings;
+    private MatchSettings matchSettings;
 
     private void Awake()
     {
+        matchSettings = Resources.Load<MatchSettings>("MatchSettings");
+
         BuildGameModeDropdown();
         ApplyInitialValues();
 

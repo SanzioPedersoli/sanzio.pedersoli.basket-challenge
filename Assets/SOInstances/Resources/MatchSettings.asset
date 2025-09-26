@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: b73fa7ff9b176f649802f891622408cb, type: 3}
   m_Name: MatchSettings
-  m_EditorClassIdentifier: Assembly-CSharp::MatchSettings
-  numberOfBots: 0
-  field: 
-  gameMode: {fileID: 0}
+  m_EditorClassIdentifier: 
+  numberOfBots: 1
+  field: Starter Field
+  gameMode: {fileID: 6548405112847854544, guid: d36c572aede56074a86dc69b2ba3ad89, type: 3}
