@@ -27,14 +27,26 @@ public class Ender : MonoBehaviour
 
     private void LoadResultScene(Dictionary<Player, float> scoresByPlayers)
     {
-        var firstPlayer = scoresByPlayers.OrderByDescending(x => x.Value).First().Key;
-        if (UserPlayer == firstPlayer)
-        {
-            SceneManager.LoadScene(victorySceneName);
-        }
-        else
+        if (scoresByPlayers == null || scoresByPlayers.Count == 0)
         {
             SceneManager.LoadScene(defeatSceneName);
+            return;
         }
+
+        if (!scoresByPlayers.TryGetValue(UserPlayer, out var userScore))
+        {
+            SceneManager.LoadScene(defeatSceneName);
+            return;
+        }
+
+        var top = scoresByPlayers.Max(x => x.Value);
+        if (userScore == top && scoresByPlayers.Count(x => x.Value == top) == 1)
+            SceneManager.LoadScene(victorySceneName);
+        else if (userScore == top)
+            // TODO: decide what to do in a tie
+            SceneManager.LoadScene(victorySceneName);
+        else
+            SceneManager.LoadScene(defeatSceneName);
     }
+
 }
